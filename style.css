@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    width: min(95vw, 400px);
+}
+
+h2 {
+    text-align: center;
+    color: rgb(36, 36, 36);
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    border-color: #ccc;
+    border-radius: 5px;
+    outline-color: #ccc;
+    line-height: 1.5;
+}
+
+div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button#stopBtn {
+    background-color: #f44336;
+}
+
+#startBtn.listening {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
