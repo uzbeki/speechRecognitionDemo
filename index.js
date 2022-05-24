@@ -27,3 +27,5 @@ recognition.addEventListener("result", e => {
     document.getElementById("results").value = spResult;
     document.getElementById("results").scrollTop = document.getElementById("results").scrollHeight;
 });
+
+recognition.onend = () => recognition.start();
