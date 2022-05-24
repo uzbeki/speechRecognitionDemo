@@ -23,10 +23,7 @@ document.getElementById("startBtn").onclick = listen;
 document.getElementById("stopBtn").onclick = stop;
 
 recognition.addEventListener("result", e => {
-    console.log(e.results);
-    const result = e.results[0][0].transcript;
-    document.getElementById("results").value = result;
-    if (e.results[0].isFinal) {
-        document.getElementById("results").value = result + " ✅";
-    }
+    const spResult = [...e.results].map(result => result[0].transcript).join("\n");
+    document.getElementById("results").value = spResult;
+    document.getElementById("results").scrollTop = document.getElementById("results").scrollHeight;
 });
