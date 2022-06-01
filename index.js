@@ -1,8 +1,8 @@
-window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+window.SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
 // window.SpeechGrammarList = window.SpeechGrammarList || webkitSpeechGrammarList;
 // window.SpeechRecognitionEvent = window.SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
-const recognition = new SpeechRecognition();
+const recognition = new window.SpeechRecognition();
 recognition.interimResults = true;
 recognition.continuous = true;
 recognition.lang = "ja-JP";
@@ -28,4 +28,4 @@ recognition.addEventListener("result", e => {
     document.getElementById("results").scrollTop = document.getElementById("results").scrollHeight;
 });
 
-recognition.onend = () => recognition.start();
+// recognition.onend = () => recognition.start();
